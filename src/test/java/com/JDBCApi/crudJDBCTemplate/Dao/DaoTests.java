@@ -32,14 +32,15 @@ public class DaoTests {
     User us3 = new User(3, "santhu", "dh", "santhu@gmail.com");
 
     @Test
-    public void testListUsers(){
+    public void testListUsers() {
         List<User> us = new ArrayList<>();
         us.add(us1);
         us.add(us2);
         us.add(us3);
         when(userDao.allUsers()).thenReturn((us));
-        assertEquals(us,userDao.allUsers());
+        assertEquals(us, userDao.allUsers());
     }
+
     @Test
     public void update() {
         when(userDao.updateUser(us1)).thenReturn(us1);
@@ -50,13 +51,14 @@ public class DaoTests {
     public void deleteTest() {
         User us2 = new User(2, "sumanth", "k", "sumanth@gmail.com");
         userDao.deleteUser(2);
-        verify(userDao,times(1)).deleteUser(2);
+        verify(userDao, times(1)).deleteUser(2);
 
     }
+
     @Test
-    public void createTest(){
+    public void createTest() {
         User us1 = new User(1, "rohit", "p", "rohit@gmail.com");
         when(userDao.createUser(us1)).thenReturn(us1);
-        assertEquals(us1,userDao.createUser(us1));
+        assertEquals(us1, userDao.createUser(us1));
     }
 }

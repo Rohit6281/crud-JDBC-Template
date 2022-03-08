@@ -68,9 +68,6 @@ public class Controller {
         Assertions.assertNotNull(us);
     }
 
-    //        ResponseEntity<User> entity = template.delete(url,);
-//        Assertions.assertEquals(HttpStatus.OK,entity.getStatusCode());
-    //}
     @DisplayName("DELETE Method")
     @Test
     public void deleteTest() {

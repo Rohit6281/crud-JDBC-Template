@@ -33,9 +33,10 @@ public class UserTests {
     ObjectMapper mapper = new ObjectMapper();
 
     @Before
-    public void setUp(){
-      mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+    public void setUp() {
+        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
+
     @Test
     @Description("Test for PostMethod")
     public void addUser() throws Exception {
@@ -44,15 +45,16 @@ public class UserTests {
         user.setName("rohit");
         user.setLastName("p");
         user.setEmail("rohit@gmail.com");
-       String JsonRequest = mapper.writeValueAsString(user);
+        String JsonRequest = mapper.writeValueAsString(user);
         MvcResult result = mockMvc.perform(post("/user").content(JsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk()).andReturn();
         String resultContext = result.getResponse().getContentAsString();
 
-        Response response = mapper.readValue(resultContext,Response.class);
+        Response response = mapper.readValue(resultContext, Response.class);
 
-        Assert.assertEquals(user,user);
+        Assert.assertEquals(user, user);
     }
+
     @Test
     @Description("Testing for PutMethod")
     public void User() throws Exception {
@@ -66,8 +68,8 @@ public class UserTests {
                 .andExpect(status().isOk()).andReturn();
         String resultContext = result.getResponse().getContentAsString();
 
-        Response response = mapper.readValue(resultContext,Response.class);
+        Response response = mapper.readValue(resultContext, Response.class);
 
-        Assert.assertEquals(user,user);
+        Assert.assertEquals(user, user);
     }
 }
