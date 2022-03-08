@@ -54,7 +54,7 @@ public class UserTests {
         Assert.assertEquals(user,user);
     }
     @Test
-    @Description("Test for PutMethod")
+    @Description("Testing for PutMethod")
     public void User() throws Exception {
         User user = new User();
         user.setId(1);
