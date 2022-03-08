@@ -70,9 +70,4 @@ public class UserTests {
 
         Assert.assertEquals(user,user);
     }
-    public void test(){
-
-    }
-
-
 }
